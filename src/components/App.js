@@ -14,7 +14,7 @@ const App = () => {
   const handleNumChange = (e) => {
     const value = e.target.value;
     setNumValue(value);
-    console.log(`Input in #num-input is ${numValue}${value}`);
+    console.log(`Input in #num-input is ${value}`);
   };
 
   return (
