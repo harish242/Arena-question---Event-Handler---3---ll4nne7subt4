@@ -1,27 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../styles/App.css';
+
 const App = () => {
+  const [textValue, setTextValue] = useState('');
+  const [numValue, setNumValue] = useState('');
 
-  const handleInput = (event) =>{
-   // use console.log
-   console.log(event.target.value)
-  }
+  const handleTextChange = (e) => {
+    const value = e.target.value;
+    setTextValue(value);
+    console.log(`Input in #text-input is ${value}`);
+  };
 
-  // do not change id of input elements
+  const handleNumChange = (e) => {
+    const value = e.target.value;
+    setNumValue(value);
+    console.log(`Input in #num-input is ${numValue}${value}`);
+  };
+
   return (
-    <div id="main">
-      <label htmlFor='text-input'>Text Input:- </label>
-      <input id="text-input" type='text' onChange={handleInput} />
-
-      <br/>
-      <br/>
-
-      <label htmlFor='num-input'>Number input</label>
-      <input id="num-input"  type='number' onChange={handleInput} />
-      <br/>
+    <div>
+      <input id="text-input" type="text" onChange={handleTextChange} />
+      <br />
+      <input id="num-input" type="number" onChange={handleNumChange} />
     </div>
-  )
-}
-
+  );
+};
 
 export default App;
